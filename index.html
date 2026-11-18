@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hozatao | Discover Stories</title>
+<title>Hozatao | A Home for Stories and Voices</title>
 
 <style>
 * { box-sizing: border-box; }
@@ -11,8 +12,8 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  color: black;
-  background: cream;
+  color: #30204D;
+  background: #F8F4EE;
 }
 
 header {
@@ -46,12 +47,9 @@ nav a {
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
-  transition: 0.3s;
 }
 
-nav a:hover {
-  color: #B9A5D6;
-}
+nav a:hover { color: #B9A5D6; }
 
 .hero {
   background: #EEE8F6;
@@ -84,13 +82,9 @@ button {
   padding: 15px 26px;
   cursor: pointer;
   font-size: 15px;
-  transition: 0.3s;
 }
 
-button:hover {
-  background: #6B528D;
-  transform: translateY(-2px);
-}
+button:hover { background: #6B528D; }
 
 section {
   padding: 45px 20px;
@@ -122,7 +116,6 @@ section {
   font-size: 14px;
   font-weight: 600;
   border: 1px solid #D9CBEA;
-  transition: 0.3s;
 }
 
 .book {
@@ -131,16 +124,14 @@ section {
   max-width: 260px;
   padding: 30px 20px;
   border-radius: 18px;
-  box-shadow: 0 4px 15px rgba(48, 32, 77, 0.08);
+  box-shadow: 0 4px 15px rgba(48,32,77,0.08);
   border: 1px solid #EEE8F6;
-  transition: 0.3s;
 }
 
 .book h3 {
   font-family: Georgia, serif;
   font-size: 23px;
   color: #30204D;
-  margin-top: 0;
 }
 
 .book p {
@@ -149,20 +140,7 @@ section {
   font-size: 14px;
 }
 
-footer {
-  background: #30204D;
-  color: white;
-  text-align: center;
-  padding: 30px 15px;
-  line-height: 1.8;
-}
-
-.hidden {
-  display: none;
-}
-/* Hozatao Writing Form */
-
-#storyForm {
+#storyForm, #loginForm {
   max-width: 600px;
   margin: 30px auto;
   display: flex;
@@ -171,7 +149,8 @@ footer {
 }
 
 #storyForm input,
-#storyForm textarea {
+#storyForm textarea,
+#loginForm input {
   width: 100%;
   padding: 16px;
   border: 1px solid #D9CBEA;
@@ -179,12 +158,6 @@ footer {
   background: white;
   font-family: Arial, sans-serif;
   font-size: 16px;
-  outline: none;
-}
-
-#storyForm input:focus,
-#storyForm textarea:focus {
-  border-color: #30204D;
 }
 
 #storyForm textarea {
@@ -203,15 +176,31 @@ footer {
   line-height: 1.8;
   overflow-wrap: anywhere;
 }
+
+#authMessage {
+  max-width: 600px;
+  margin: 20px auto;
+  overflow-wrap: anywhere;
+  line-height: 1.6;
+}
+
+footer {
+  background: #30204D;
+  color: white;
+  text-align: center;
+  padding: 30px 15px;
+  line-height: 1.8;
+}
+
+.hidden { display: none; }
 </style>
 </head>
 
 <body>
 
 <header>
-
-<div class="logo">HOZATAO</div>
-<p class="tagline">A home for stories and voices.</p>
+  <div class="logo">HOZATAO</div>
+  <p class="tagline">A home for stories and voices.</p>
 
   <nav>
     <a href="#home">Home</a>
@@ -223,30 +212,22 @@ footer {
 
 <div class="hero" id="home">
   <h1>Every voice deserves a place.</h1>
-
   <p>
     A home for stories, imagination,
     and voices waiting to be heard.
   </p>
-
   <button onclick="location.href='#discover'">
     Discover Stories
   </button>
 </div>
 
 <section id="discover">
-
   <h1>Discover Stories</h1>
-
   <p>Find a story that speaks to you.</p>
 
-  <input
-    class="search"
-    id="search"
+  <input class="search" id="search"
     type="text"
-    placeholder="Search books or authors..."
-    oninput="searchBooks()"
-  >
+    placeholder="Search books or authors...">
 
   <h2>Explore Categories</h2>
 
@@ -262,15 +243,13 @@ footer {
   <h2>Featured Stories</h2>
 
   <div class="books">
-
     <div class="book">
       <h3>The Silent Heart</h3>
       <p>By Hozatao Writers</p>
       <p>A story of feelings and words left unspoken.</p>
-<button onclick="document.getElementById('reading').scrollIntoView()">
-  Read Story
-</button>
-
+      <button onclick="document.getElementById('reading').scrollIntoView()">
+        Read Story
+      </button>
     </div>
 
     <div class="book">
@@ -290,25 +269,19 @@ footer {
         Read Story
       </button>
     </div>
-
   </div>
 
   <p id="noResults" class="hidden">
     No matching stories found.
   </p>
-
 </section>
 
 <section id="reading">
-
   <h1>The Silent Heart</h1>
-
   <p>Written by Hozatao Writers</p>
-
   <hr>
 
   <h2>About This Book</h2>
-
   <p>
     Some stories are difficult to tell.
     Some feelings are difficult to explain.
@@ -316,7 +289,6 @@ footer {
   </p>
 
   <h2>Chapter 1</h2>
-
   <h3>The Beginning</h3>
 
   <p>
@@ -327,51 +299,36 @@ footer {
     to be spoken.
   </p>
 
-  <p>
-    Welcome to the beginning of this story.
-  </p>
+  <p>Welcome to the beginning of this story.</p>
 
   <button onclick="document.getElementById('discover').scrollIntoView()">
     Back to Discover
   </button>
-
 </section>
 
 <section id="write">
   <h1>Your story belongs here.</h1>
-
   <p>
     Your words matter. Your story matters.
     Give them a home and let your voice travel.
   </p>
 
   <form id="storyForm">
+    <input type="text" id="storyTitle"
+      placeholder="Story title" required>
 
-    <input
-      type="text"
-      id="storyTitle"
-      placeholder="Story title"
-      required
-    >
+    <input type="text" id="authorName"
+      placeholder="Pen name (optional)">
 
-    <input
-      type="text"
-      id="authorName"
-      placeholder="Pen name (optional)"
-    >
-
-    <textarea
-      id="storyContent"
-      placeholder="Write your story here..."
-      required
-    ></textarea>
+    <textarea id="storyContent"
+      placeholder="Write your story here..." required></textarea>
 
     <button type="submit">Preview My Story</button>
-
   </form>
 
   <div id="storyPreview"></div>
 </section>
+
 <section id="login">
   <h1>Welcome to Hozatao</h1>
   <p>Join a community where every voice matters.</p>
@@ -381,27 +338,25 @@ footer {
       placeholder="Your email address" required>
 
     <input type="password" id="password"
-      placeholder="Your password" required>
+      placeholder="Your password" required minlength="6">
 
     <button type="submit">Log In</button>
+
     <button type="button" id="signupButton">
       Create Account
     </button>
   </form>
 
-  <p id="authMessage"></p>
+  <p id="authMessage" aria-live="polite"></p>
 </section>
+
 <section>
   <h2>About Hozatao</h2>
-
   <p>
-    A home for the unheard, the heavy-hearted,
-    the dreamers, and those who find comfort in words.
+    A home for the unheard, the dreamers,
+    and those who find comfort in words.
   </p>
-
-  <p>
-    Every voice matters. Every story belongs.
-  </p>
+  <p>Every voice matters. Every story belongs.</p>
 </section>
 
 <footer>
@@ -410,12 +365,17 @@ footer {
   <p>Hozatao © 2026 · Founded by Hamida Umuhoza.</p>
 </footer>
 
-<script>
-function searchBooks() {
-  const query = document
-    .getElementById("search")
-    .value.toLowerCase();
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
+<script>
+const supabaseClient = window.supabase.createClient(
+  "https://euisjqmiumeczhfaebba.supabase.co",
+  "sb_publishable_9cN9kkHDojkdeaMN-Hnu_A_yJikcALv"
+);
+
+// Search stories
+function searchBooks() {
+  const query = document.getElementById("search").value.toLowerCase();
   const books = document.querySelectorAll(".book");
   let found = 0;
 
@@ -428,75 +388,97 @@ function searchBooks() {
   document.getElementById("noResults")
     .classList.toggle("hidden", found > 0);
 }
-document.getElementById("storyForm").addEventListener("submit", function(event) {
-  event.preventDefault();
 
-  const title = document.getElementById("storyTitle").value;
-  const author = document.getElementById("authorName").value || "Anonymous";
-  const content = document.getElementById("storyContent").value;
+document.getElementById("search")
+  .addEventListener("input", searchBooks);
 
-  const preview = document.getElementById("storyPreview");
+// Preview a story
+document.getElementById("storyForm")
+  .addEventListener("submit", function(event) {
+    event.preventDefault();
 
-  preview.innerHTML = "";
+    const title = document.getElementById("storyTitle").value;
+    const author = document.getElementById("authorName").value || "Anonymous";
+    const content = document.getElementById("storyContent").value;
 
-  const heading = document.createElement("h2");
-  heading.textContent = title;
+    const preview = document.getElementById("storyPreview");
+    preview.innerHTML = "";
 
-  const authorText = document.createElement("p");
-  authorText.textContent = "Written by " + author;
+    const heading = document.createElement("h2");
+    heading.textContent = title;
 
-  const storyText = document.createElement("p");
-  storyText.textContent = content;
-  storyText.style.whiteSpace = "pre-wrap";
+    const authorText = document.createElement("p");
+    authorText.textContent = "Written by " + author;
 
-  preview.appendChild(heading);
-  preview.appendChild(authorText);
-  preview.appendChild(storyText);
-});// Log in with email and password
-document.getElementById("loginForm").addEventListener("submit", async function(event) {
-  event.preventDefault();
+    const storyText = document.createElement("p");
+    storyText.textContent = content;
+    storyText.style.whiteSpace = "pre-wrap";
 
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-  const message = document.getElementById("authMessage");
-
-  const { error } = await supabaseClient.auth.signInWithPassword({
-    email: email,
-    password: password
+    preview.appendChild(heading);
+    preview.appendChild(authorText);
+    preview.appendChild(storyText);
   });
 
-  message.textContent = error
-    ? error.message
-    : "Welcome back! You are logged in.";
-});
+// Log in
+document.getElementById("loginForm")
+  .addEventListener("submit", async function(event) {
+    event.preventDefault();
 
-// Create a new account
-document.getElementById("signupButton").addEventListener("click", async function() {
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-  const message = document.getElementById("authMessage");
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const message = document.getElementById("authMessage");
 
-  if (!email || !password) {
-    message.textContent = "Please enter your email and password.";
-    return;
-  }
+    message.textContent = "Please wait...";
 
-  const { data, error } = await supabaseClient.auth.signUp({
-    email: email,
-    password: password
+    try {
+      const { error } = await supabaseClient.auth.signInWithPassword({
+        email,
+        password
+      });
+
+      message.textContent = error
+        ? error.message
+        : "Welcome back! You are logged in.";
+    } catch (error) {
+      message.textContent = "Connection problem: " + error.message;
+    }
   });
 
-  message.textContent = error
-    ? error.message
-    : data.session
-      ? "Your account has been created!"
-      : "Check your email to confirm your account.";
-});
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+// Create an account
+document.getElementById("signupButton")
+  .addEventListener("click", async function() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const message = document.getElementById("authMessage");
+
+    if (!email || !password) {
+      message.textContent = "Please enter your email and password.";
+      return;
+    }
+
+    if (password.length < 6) {
+      message.textContent = "Your password must have at least 6 characters.";
+      return;
+    }
+
+    message.textContent = "Creating your account...";
+
+    try {
+      const { data, error } = await supabaseClient.auth.signUp({
+        email,
+        password
+      });
+
+      message.textContent = error
+        ? error.message
+        : data.session
+          ? "Your account has been created!"
+          : "Check your email to confirm your account.";
+    } catch (error) {
+      message.textContent = "Connection problem: " + error.message;
+    }
+  });
 </script>
-const supabaseClient = window.supabase.createClient(
-  "https://euisjqmiumeczhfaebba.supabase.co/rest/v1/",
-  "sb_publishable_9cN9kkHDojkdeaMN-Hnu_A_yJikcALv"
-);
+
 </body>
-</html
+</html>
